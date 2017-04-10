@@ -5,7 +5,7 @@
 ** Login   <alexandre@epitech.net>
 **
 ** Started on  Sun Jan  8 16:29:01 2017 Lefevre Alexandre
-** Last update Mon Apr 10 15:34:02 2017 P3N15
+** Last update Mon Apr 10 16:19:28 2017 P3N15
 */
 
 #include <unistd.h>
@@ -24,6 +24,7 @@ int	my_get_nbr(char *str);
 
 /*-----maze_generator.c-----*/
 int	maze_generator(int, int);
+int	*get_random_place(int *, int, int);
 char	**fill_map_x(char **, int);
 char	**get_malloc_map(int, int);
 char	**make_random_path(char **, int, int);
