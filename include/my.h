@@ -5,7 +5,7 @@
 ** Login   <alexandre@epitech.net>
 **
 ** Started on  Sun Jan  8 16:29:01 2017 Lefevre Alexandre
-** Last update Tue Apr 11 13:42:18 2017 P3N15
+** Last update Tue Apr 11 14:43:35 2017 P3N15
 */
 
 #include <unistd.h>
@@ -20,6 +20,7 @@ int	main();
 /*-----basics.c-----*/
 void	my_putchar(char);
 void	my_putstr(char *);
+void	my_puttab(char **);
 int	my_get_nbr(char *);
 
 /*-----maze_generator.c-----*/

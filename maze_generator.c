@@ -5,7 +5,7 @@
 ** Login   <alexandre1.lefevre@epitech.eu>
 ** 
 ** Started on  Mon Apr 10 10:55:00 2017 P3N15
-** Last update Tue Apr 11 14:01:09 2017 P3N15
+** Last update Tue Apr 11 14:44:52 2017 P3N15
 */
 
 #include "include/my.h"
@@ -17,7 +17,7 @@ int	maze_generator(int x, int y)
   maze = get_malloc_map(x, y);
   maze = fill_map_x(maze, x);
   maze = make_random_path(maze, x - 1, y - 1);
-  printf("%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n", maze[0], maze[1], maze[2], maze[3], maze[4], maze[5], maze[6], maze[7], maze[8], maze[9], maze[10], maze[11], maze[12]);
+  my_puttab(maze);
   return (0);
 }
 
@@ -43,7 +43,7 @@ char	**make_random_path(char **maze, int x, int y)
     }
   maze[n][i] = '*';
   maze[y][x] = '*';
-  maze = add_imperfection(maze, random);
+  //  maze = add_imperfection(maze, random);
   return (maze);
 }
 
