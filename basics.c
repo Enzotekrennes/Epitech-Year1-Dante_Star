@@ -5,7 +5,7 @@
 ** Login   <alexandre1.lefevre@epitech.eu>
 ** 
 ** Started on  Sun Apr  9 23:39:22 2017 P3N15
-** Last update Mon Apr 10 11:39:11 2017 P3N15
+** Last update Tue Apr 11 14:32:02 2017 P3N15
 */
 
 #include "include/my.h"
@@ -23,6 +23,18 @@ void	my_putstr(char *str)
   while (str[i] != '\0')
     {
       my_putchar(str[i]);
+      i++;
+    }
+}
+
+void	my_puttab(char **tab)
+{
+  int	i;
+
+  i = 0;
+  while (tab[i] != '\0')
+    {
+      my_putstr(tab[i]);
       i++;
     }
 }
