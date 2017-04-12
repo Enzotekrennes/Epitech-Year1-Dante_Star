@@ -5,7 +5,7 @@
 ** Login   <alexandre1.lefevre@epitech.eu>
 ** 
 ** Started on  Mon Apr 10 10:55:00 2017 P3N15
-** Last update Tue Apr 11 15:00:10 2017 P3N15
+** Last update Wed Apr 12 18:16:00 2017 P3N15
 */
 
 #include "include/my.h"
@@ -26,23 +26,31 @@ char	**make_random_path(char **maze, int x, int y)
 {
   int	i = 0;
   int	n = 0;
-  int	direction;
+  int	horiz;
+  int	verti;
+  int	dir;
   int	*random;
 
-  random = malloc(sizeof(int) * (x * y));
   srand(time(NULL));
-  while ((i != x && i != x - 1) || (n != y && n != y - 1)
-	 || (n == y - 1 && i == x - 1))
+  while (i != x && i != x - 1 || n != y && n != y - 1)
     {
-      maze[n][i] = '*';
-      direction = rand() % 2;
-      //      random = get_random_place(random, i, n);
-      (direction == 0 && n != y) ? n++ : 0;
-      (direction == 1 && i != x) ? i++ : 0;
+      dir = rand() % 4;
+      printf("%d,%d\n", i, n);
+      horiz = can_it_horiz(maze, dir, i, n);
+      verti = can_it_verti(maze, dir, i, n);
+      (dir == 0 && n != y) ? maze = maze_down(maze, i, n, y) : 0;
+      (dir == 2 && i != x) ? maze = maze_right(maze, i, n, y) : 0;
+      (dir == 1 && n != 0) ? maze = maze_up(maze, i, n, y) : 0;
+      (dir == 3 && i != 0) ? maze = maze_left(maze, i, n, y) : 0;
+      i = horiz;
+      n = verti;
+      //      my_puttab(maze);
+      //      if (am_i_blocked(maze, i, n))
+      //(1) ? n = new_n(maze, i, n), i = new_i(maze, i, n)  : 0;
     }
-  maze[n][i] = '*';
+  maze[0][0] = '*';
   maze[y][x] = '*';
-  //  maze = add_imperfection(maze, random);
+  (maze[y - 1][x] == 'X' && maze[y][x - 1] == 'X') ? maze[y -1][x] = '*': 0;
   return (maze);
 }
 

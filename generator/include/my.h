@@ -5,13 +5,14 @@
 ** Login   <alexandre@epitech.net>
 **
 ** Started on  Sun Jan  8 16:29:01 2017 Lefevre Alexandre
-** Last update Tue Apr 11 14:43:35 2017 P3N15
+** Last update Wed Apr 12 17:22:42 2017 P3N15
 */
 
 #include <unistd.h>
 #include <stdlib.h>
 #include <stdio.h>
 #include <time.h>
+#include <string.h>
 
 
 /*-----main.c-----*/
@@ -33,3 +34,16 @@ char	**make_random_path(char **, int, int);
 /*-----imperfection.c-----*/
 char	**add_imperfection(char **, int *);
 char	**imperfection_creator(char **, int, int);
+
+/*-----direction.c-----*/
+char	**maze_up(char **, int, int, int);
+char	**maze_down(char **, int, int, int);
+char	**maze_left(char **, int, int, int);
+char	**maze_right(char **, int, int, int);
+
+/*-----do_stuff.c-----*/
+int	am_i_blocked(char **, int, int);
+int	new_i(char **, int, int);
+int	new_n(char **, int, int);
+int	can_it_horiz(char **, int, int, int);
+int	can_it_verti(char **, int, int, int);
