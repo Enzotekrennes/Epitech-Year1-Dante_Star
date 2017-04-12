@@ -1,11 +1,11 @@
 /*
-xc** do_stuff.c for dante in /home/p3n15/delivery/Epitech-Year1-Dante_star/generator
+** do_stuff.c for dante in /home/p3n15/delivery/Epitech-Year1-Dante_star/generator
 ** 
 ** Made by P3N15
 ** Login   <alexandre1.lefevre@epitech.eu>
 ** 
 ** Started on  Tue Apr 11 17:42:49 2017 P3N15
-** Last update Wed Apr 12 18:14:44 2017 P3N15
+** Last update Wed Apr 12 20:17:30 2017 P3N15
 */
 
 #include "include/my.h"
@@ -27,12 +27,8 @@ int	am_i_blocked(char **maze, int i, int n)
   while (b != 19 && coord_y[0] == coord_y[b] && count >= 21)
     b++;
   count++;
-  printf("        %d,%doui", a, b);
-  if (b == 19 && a == 19)
-    {
-      printf("WAAAAAAAAAAAAAAAAAAAluigi");
-      return (1);
-    }
+  if (b == 19 || a == 19)
+    return (1);
   return (0);
 }
 
@@ -48,16 +44,20 @@ int	new_i(char **maze, int i, int n)
 
 int	new_n(char **maze, int i, int n)
 {
+  int	save;
+
   i = 0;
   n = 0;
-  while (maze[n][i] != '\0')
+  while (maze[n] != '\0' && maze[n][i] != '\0')
     {
       while(maze[n][i] != '*' && maze[n][i] != '\0')
 	i++;
+      if (maze[n][i] =='*')
+	save = n;
       n++;
       i = 0;
     }
-  return (n - 1);
+  return (save);
 }
 
 int	can_it_horiz(char **maze, int dir, int i, int n)

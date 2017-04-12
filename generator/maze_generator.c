@@ -5,7 +5,7 @@
 ** Login   <alexandre1.lefevre@epitech.eu>
 ** 
 ** Started on  Mon Apr 10 10:55:00 2017 P3N15
-** Last update Wed Apr 12 18:16:00 2017 P3N15
+** Last update Wed Apr 12 20:17:55 2017 P3N15
 */
 
 #include "include/my.h"
@@ -35,7 +35,6 @@ char	**make_random_path(char **maze, int x, int y)
   while (i != x && i != x - 1 || n != y && n != y - 1)
     {
       dir = rand() % 4;
-      printf("%d,%d\n", i, n);
       horiz = can_it_horiz(maze, dir, i, n);
       verti = can_it_verti(maze, dir, i, n);
       (dir == 0 && n != y) ? maze = maze_down(maze, i, n, y) : 0;
@@ -44,9 +43,8 @@ char	**make_random_path(char **maze, int x, int y)
       (dir == 3 && i != 0) ? maze = maze_left(maze, i, n, y) : 0;
       i = horiz;
       n = verti;
-      //      my_puttab(maze);
-      //      if (am_i_blocked(maze, i, n))
-      //(1) ? n = new_n(maze, i, n), i = new_i(maze, i, n)  : 0;
+      if (am_i_blocked(maze, i, n) == 1)
+	(1) ? n = new_n(maze, i, n), i = new_i(maze, i, n)  : 0;
     }
   maze[0][0] = '*';
   maze[y][x] = '*';
