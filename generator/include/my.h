@@ -5,7 +5,7 @@
 ** Login   <alexandre@epitech.net>
 **
 ** Started on  Sun Jan  8 16:29:01 2017 Lefevre Alexandre
-** Last update Thu Apr 13 07:21:52 2017 P3N15
+** Last update Thu Apr 13 12:28:37 2017 P3N15
 */
 
 #include <unistd.h>
@@ -32,8 +32,10 @@ char	**get_malloc_map(int, int);
 char	**make_random_path(char **, int, int);
 
 /*-----imperfection.c-----*/
-char	**add_imperfection(char **, int *);
-char	**imperfection_creator(char **, int, int);
+int	get_x_road(char **, int, int, int);
+int	get_y_road(char **, int, int, int);
+char	**my_add_cluster(char **);
+char	**my_road_builder(char **, int, int);
 
 /*-----direction.c-----*/
 char	**maze_up(char **, int, int);
@@ -47,3 +49,9 @@ int	new_i(char **, int, int);
 int	new_n(char **, int, int);
 int	can_it_horiz(char **, int, int, int);
 int	can_it_verti(char **, int, int, int);
+
+/*-----way_finder.c-----*/
+char	**road_up(char **, int, int);
+char	**road_down(char **, int, int);
+char	**road_left(char **, int, int);
+char	**road_right(char **, int, int);

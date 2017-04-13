@@ -5,7 +5,7 @@
 ** Login   <alexandre1.lefevre@epitech.eu>
 ** 
 ** Started on  Mon Apr 10 10:55:00 2017 P3N15
-** Last update Thu Apr 13 07:39:45 2017 P3N15
+** Last update Thu Apr 13 12:32:24 2017 P3N15
 */
 
 #include "include/my.h"
@@ -17,6 +17,7 @@ int	maze_generator(int x, int y)
   maze = get_malloc_map(x, y);
   maze = fill_map_x(maze, x);
   maze = make_random_path(maze, x - 1, y - 1);
+  maze = my_add_cluster(maze);
   my_puttab(maze);
   return (0);
 }

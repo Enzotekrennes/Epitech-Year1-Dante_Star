@@ -5,7 +5,7 @@
 ** Login   <ludovic.porokhov@epitech.net>
 ** 
 ** Started on  Wed Apr 12 14:55:08 2017 Ludovic POROKHOV
-** Last update Wed Apr 12 19:09:11 2017 Ludovic POROKHOV
+** Last update Thu Apr 13 10:49:51 2017 P3N15
 */
 
 #include "include/my.h"
@@ -74,9 +74,9 @@ char    *file_reader(char *filename)
 
   if ((fd = open(filename, O_RDONLY)) == -1)
     return (NULL);
-  if ((file = malloc(7000)) == NULL)
+  if ((file = malloc(10000)) == NULL)
     return (NULL);
-  while ((gotten = read(fd, file, 7000)) > 0)
+  while ((gotten = read(fd, file, 10000)) > 0)
     file[gotten] = '\0';
   return (file);
 }

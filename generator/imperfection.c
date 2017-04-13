@@ -5,49 +5,110 @@
 ** Login   <alexandre1.lefevre@epitech.eu>
 ** 
 ** Started on  Mon Apr 10 16:26:42 2017 P3N15
-** Last update Tue Apr 11 14:01:22 2017 P3N15
+** Last update Thu Apr 13 12:40:55 2017 P3N15
 */
 
 #include "include/my.h"
 
-char	**add_imperfection(char **maze, int *random)
+char	**my_add_cluster(char **maze)
 {
   int	i;
-  int	x;
-  int	y;
+  int	n;
+  int	k;
 
   i = 0;
-  while (random[i] != '\0')
+  n = 0;
+  k = 0;
+  while (k != 10)
     {
-      y = random[i] - 1;
-      x = random[i + 1] - 1;
-      maze = imperfection_creator(maze, x, y);
-      i = i + 2;
+      while (maze[n] != '\0')
+	{
+	  while (maze[n][i] != '\0')
+	    {
+	      if (maze[n][i] == '*')
+		maze = my_road_builder(maze, i, n);
+	      i = i + 2;
+	    }
+	  n = n + 2;
+	  i = 0;
+	}
+      i = 0;
+      n = 0;
+      k++;
     }
   return (maze);
 }
 
-char	**imperfection_creator(char **maze, int x, int y)
+char	**my_road_builder(char **maze, int i, int n)
 {
-  int	i = 0;
-  int	random;
-  int	max_x = 0;
-  int	max_y = 0;
+  int	a;
+  int	rd;
+  int	x;
+  int	y;
 
-  while (maze[0][max_x] != '\0')
-    max_x++;
-  while (maze[max_y] != '\0')
-    max_y++;
-  while (i != 10)
+  a = 0;
+  while (a != 20)
     {
-      random = rand() % 4;
-      printf("%d", random);
-      //      (random == 0 && go_up(maze, x, y, max_x) ? : 0;
-      (random == 1 && x != max_x) ? x++ : 0;
-      (random == 2 && y != 0) ? y-- : 0;
-      (random == 3 && x != 0) ? x-- : 0;
-      maze[y][x] = '*';
-      i++;
+      rd = rand() % 4;
+      x = get_x_road(maze, rd, i, n);
+      y = get_y_road(maze, rd, i, n);
+      (rd == 0) ? maze = road_up(maze, i, n) : 0;
+      (rd == 1) ? maze = road_down(maze, i, n) : 0;
+      (rd == 2) ? maze = road_left(maze, i, n) : 0;
+      (rd == 3) ? maze = road_right(maze, i, n) : 0;
+      i = x;
+      n = y;
+      a++;
     }
   return (maze);
+}
+
+int	get_y_road(char **maze, int rd, int i, int n)
+{
+  int	j;
+
+  j = 0;
+  while (maze[j] != '\0')
+    j++;
+  j--;
+  if (rd == 2 || rd == 3)
+    return (n);
+  if (rd == 0)
+    {
+      if (n == 0 || n == 1 || maze[n - 2][i] == '*')
+	return (n);
+      return (n - 2);
+    }
+  if (rd == 1)
+    {
+      if (n == j || n == j - 1 || maze[n + 2][i] == '*')
+	return (n);
+      return (n + 2);
+    }
+  return (n);
+}
+
+int	get_x_road(char **maze, int rd, int i, int n)
+{
+  int	k;
+
+  k = 0;
+  while (maze[0][k] != '\0')
+    k++;
+  k--;
+  if (rd == 0 || rd == 1)
+    return (i);
+  if (rd == 2)
+    {
+      if (i == 0 || i == 1 || maze[n][i - 2] == '*')
+	return (i);
+      return (i - 2);
+    }
+  if (rd == 3)
+    {
+      if (i == k || i == k - 1 || maze[n][i + 2] == '*')
+	return (i);
+      return (i + 2);
+    }
+  return (i);
 }
