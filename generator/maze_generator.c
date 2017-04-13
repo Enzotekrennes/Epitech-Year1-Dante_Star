@@ -5,7 +5,7 @@
 ** Login   <alexandre1.lefevre@epitech.eu>
 ** 
 ** Started on  Mon Apr 10 10:55:00 2017 P3N15
-** Last update Thu Apr 13 07:21:44 2017 P3N15
+** Last update Thu Apr 13 07:39:45 2017 P3N15
 */
 
 #include "include/my.h"
@@ -91,7 +91,7 @@ char	**get_malloc_map(int x, int y)
   int	i;
 
   i = 0;
-  maze = malloc(sizeof(char *) * y);
+  maze = malloc(sizeof(char *) * y + 1);
   while (i != y)
     {
       maze[i] = malloc(sizeof(char) * x + 1);
