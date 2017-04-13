@@ -5,7 +5,7 @@
 ** Login   <ludovic.porokhov@epitech.net>
 ** 
 ** Started on  Wed Apr 12 16:52:23 2017 Ludovic POROKHOV
-** Last update Wed Apr 12 19:15:20 2017 Ludovic POROKHOV
+** Last update Thu Apr 13 10:04:15 2017 Ludovic POROKHOV
 */
 
 #include "include/my.h"
@@ -24,9 +24,28 @@ int	checkmove(t_laby ia, int xmax, int ymax)
   if (ia.x > 0)
     if (ia.lab[ia.y][ia.x - 1] == '*')
       return (0);
-  return (84);
+  if (checkother(ia, xmax, ymax) == 0)
+    return (84);
+  return (1);
 }
 
+int	checkother(t_laby ia, int xmax, int ymax)
+{
+  if (ia.y < ymax - 1)
+    if (ia.lab[ia.y + 1][ia.x] == 'o')
+      return (0);
+  if (ia.y > 0)
+    if (ia.lab[ia.y - 1][ia.x] == 'o')
+      return (0);
+  if (ia.x < xmax - 1)
+    if (ia.lab[ia.y][ia.x + 1] == 'o')
+      return (0);
+  if (ia.x > 0)
+    if (ia.lab[ia.y][ia.x - 1] == 'o')
+      return (0);
+  return (84);
+}
+  
 t_laby	forward(t_laby ia, int xmax, int ymax)
 {
   if (ia.y < ymax - 1)

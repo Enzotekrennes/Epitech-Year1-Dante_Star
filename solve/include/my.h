@@ -5,7 +5,7 @@
 ** Login   <ludovic.porokhov@epitech.net>
 ** 
 ** Started on  Tue Apr 11 16:12:05 2017 Ludovic POROKHOV
-** Last update Wed Apr 12 19:10:55 2017 Ludovic POROKHOV
+** Last update Thu Apr 13 10:03:02 2017 Ludovic POROKHOV
 */
 
 #ifndef MY_H_
@@ -35,6 +35,7 @@ int	how_many_lines(char *);
 int	linelen(char *);
 int	tab_line(char **);
 int	checkmove(t_laby, int, int);
+int	checkother(t_laby, int, int);
 
 char	*file_reader(char *);
 

@@ -5,7 +5,7 @@
 ** Login   <ludovic.porokhov@epitech.net>
 ** 
 ** Started on  Tue Apr 11 16:13:59 2017 Ludovic POROKHOV
-** Last update Wed Apr 12 19:15:50 2017 Ludovic POROKHOV
+** Last update Thu Apr 13 10:04:59 2017 Ludovic POROKHOV
 */
 
 #include "include/my.h"
@@ -17,7 +17,11 @@ void	solver(t_laby ia)
 
   line = tab_line(ia.lab);
   col = linelen(ia.lab[0]);
-  ia.lab = solving(ia, col, line);
+  if ((ia.lab = solving(ia, col, line)) == NULL)
+    {
+      printf("Error : map invalid\n");
+      return ;
+    }
   my_putlab(ia.lab);
   my_putstr("\n");
   my_puttab(ia.lab);
@@ -25,15 +29,20 @@ void	solver(t_laby ia)
 
 char	**solving(t_laby ia, int xmax, int ymax)
 {
+  int	check;
+  
   ia.x = 0;
   ia.y = 0;
   ia.lab[ia.y][ia.x] = 'o';
   while (ia.x != xmax - 1 || ia.y != ymax - 1)
     {
-      if (checkmove(ia, xmax, ymax) == 0)
+      check = checkmove(ia, xmax, ymax);
+      if (check == 0)
 	ia = forward(ia, xmax, ymax);
-      else
+      else if (check == 84)
 	ia = backward(ia, xmax, ymax);
+      else
+	return (NULL);
       ia.lab[ia.y][ia.x] = 'o';
     }
   return (ia.lab);
