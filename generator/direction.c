@@ -5,12 +5,12 @@
 ** Login   <alexandre1.lefevre@epitech.eu>
 ** 
 ** Started on  Tue Apr 11 16:24:19 2017 P3N15
-** Last update Wed Apr 12 16:10:48 2017 P3N15
+** Last update Thu Apr 13 07:19:38 2017 P3N15
 */
 
 #include "include/my.h"
 
-char	**maze_up(char **maze, int x, int y, int max_y)
+char	**maze_up(char **maze, int x, int y)
 {
   int	max_x;
 
@@ -47,7 +47,7 @@ char	**maze_left(char **maze, int x, int y, int max_y)
   return (maze);
 }
 
-char	**maze_right(char **maze, int x, int y, int max_y)
+char	**maze_right(char **maze, int x, int y)
 {
   int	max_x;
 
