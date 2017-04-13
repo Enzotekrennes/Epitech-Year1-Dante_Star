@@ -5,16 +5,16 @@
 ** Login   <alexandre1.lefevre@epitech.eu>
 ** 
 ** Started on  Tue Apr 11 17:42:49 2017 P3N15
-** Last update Wed Apr 12 20:17:30 2017 P3N15
+** Last update Thu Apr 13 07:33:09 2017 P3N15
 */
 
 #include "include/my.h"
 
-int	am_i_blocked(char **maze, int i, int n)
+int	am_i_blocked(int i, int n)
 {
   static int	count = 0;
-  static char	*coord_x[20];
-  static char	*coord_y[20];
+  static int	*coord_x[20];
+  static int	*coord_y[20];
   int		a;
   int		b;
 

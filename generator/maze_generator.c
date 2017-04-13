@@ -5,7 +5,7 @@
 ** Login   <alexandre1.lefevre@epitech.eu>
 ** 
 ** Started on  Mon Apr 10 10:55:00 2017 P3N15
-** Last update Wed Apr 12 20:17:55 2017 P3N15
+** Last update Thu Apr 13 07:21:44 2017 P3N15
 */
 
 #include "include/my.h"
@@ -29,26 +29,25 @@ char	**make_random_path(char **maze, int x, int y)
   int	horiz;
   int	verti;
   int	dir;
-  int	*random;
 
   srand(time(NULL));
-  while (i != x && i != x - 1 || n != y && n != y - 1)
+  while ((i != x && i != x - 1) || ( n != y && n != y - 1))
     {
       dir = rand() % 4;
       horiz = can_it_horiz(maze, dir, i, n);
       verti = can_it_verti(maze, dir, i, n);
       (dir == 0 && n != y) ? maze = maze_down(maze, i, n, y) : 0;
-      (dir == 2 && i != x) ? maze = maze_right(maze, i, n, y) : 0;
-      (dir == 1 && n != 0) ? maze = maze_up(maze, i, n, y) : 0;
+      (dir == 2 && i != x) ? maze = maze_right(maze, i, n) : 0;
+      (dir == 1 && n != 0) ? maze = maze_up(maze, i, n) : 0;
       (dir == 3 && i != 0) ? maze = maze_left(maze, i, n, y) : 0;
       i = horiz;
       n = verti;
-      if (am_i_blocked(maze, i, n) == 1)
-	(1) ? n = new_n(maze, i, n), i = new_i(maze, i, n)  : 0;
+      if (am_i_blocked(i, n) == 1)
+	(1) ? n = new_n(maze, i, n), i = new_i(maze, i, n) : 0;
     }
   maze[0][0] = '*';
   maze[y][x] = '*';
-  (maze[y - 1][x] == 'X' && maze[y][x - 1] == 'X') ? maze[y -1][x] = '*': 0;
+  (maze[y - 1][x] == 'X' && maze[y][x - 1] == 'X') ? maze[y - 1][x] = '*': 0;
   return (maze);
 }
 
@@ -95,7 +94,7 @@ char	**get_malloc_map(int x, int y)
   maze = malloc(sizeof(char *) * y);
   while (i != y)
     {
-      maze[i] = malloc(sizeof(char) * x);
+      maze[i] = malloc(sizeof(char) * x + 1);
       i++;
     }
   return (maze);

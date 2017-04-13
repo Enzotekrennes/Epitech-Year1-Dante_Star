@@ -5,7 +5,7 @@
 ** Login   <alexandre1.lefevre@epitech.eu>
 ** 
 ** Started on  Sun Apr  9 23:39:22 2017 P3N15
-** Last update Wed Apr 12 20:18:40 2017 P3N15
+** Last update Thu Apr 13 07:13:45 2017 P3N15
 */
 
 #include "include/my.h"
@@ -32,7 +32,7 @@ void	my_puttab(char **tab)
   int	i;
 
   i = 0;
-  while (tab[i + 1] != '\0')
+  while (tab[i] != '\0')
     {
       my_putstr(tab[i]);
       my_putchar('\n');
