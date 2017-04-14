@@ -5,7 +5,7 @@
 ** Login   <alexandre1.lefevre@epitech.eu>
 ** 
 ** Started on  Thu Apr 13 11:29:08 2017 P3N15
-** Last update Fri Apr 14 16:56:49 2017 P3N15
+** Last update Fri Apr 14 17:01:41 2017 P3N15
 */
 
 #include "include/my.h"
@@ -76,6 +76,5 @@ char	**my_add_loop(char **maze)
       maze = random_create_loop(maze, x, y);
       k++;
     }
-  printf("%d", k);
   return (maze);
 }
