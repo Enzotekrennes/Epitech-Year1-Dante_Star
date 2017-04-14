@@ -5,7 +5,7 @@
 ** Login   <alexandre1.lefevre@epitech.eu>
 ** 
 ** Started on  Tue Apr 11 16:24:19 2017 P3N15
-** Last update Fri Apr 14 16:55:38 2017 P3N15
+** Last update Fri Apr 14 19:14:50 2017 P3N15
 */
 
 #include "include/my.h"
@@ -64,15 +64,23 @@ char	**random_create_loop(char **maze, int x, int y)
 {
   int	pos_x;
   int	pos_y;
+  int	random = rand() % 2;
 
   pos_x = rand() % (x - 1);
   pos_y = rand() % (y - 1);
-  if (pos_y % 2 == pos_x % 2)
+  if (pos_y % 2 == pos_x % 2 && random == 0)
     {
       if (pos_y > 0)
 	pos_y--;
       else if (pos_x > 0)
 	pos_x--;
+    }
+  else if (pos_y % 2 == pos_x % 2 && random == 1)
+    {
+      if (pos_x > 0)
+	pos_x--;
+      else if (pos_y > 0)
+	pos_y--;
     }
   if (maze[pos_y][pos_x] == '*')
     maze = random_create_loop(maze, x, y);
