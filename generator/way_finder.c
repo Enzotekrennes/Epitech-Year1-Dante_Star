@@ -5,7 +5,7 @@
 ** Login   <alexandre1.lefevre@epitech.eu>
 ** 
 ** Started on  Thu Apr 13 11:29:08 2017 P3N15
-** Last update Thu Apr 13 12:40:24 2017 P3N15
+** Last update Fri Apr 14 16:56:49 2017 P3N15
 */
 
 #include "include/my.h"
@@ -55,5 +55,27 @@ char	**road_right(char **maze, int i, int n)
     return (maze);
   maze[n][i + 1] = '*';
   maze[n][i + 2] = '*';
+  return (maze);
+}
+
+char	**my_add_loop(char **maze)
+{
+  int	x;
+  int	y;
+  int	loops;
+  int	k;
+
+  k = 0;
+  x = my_strlen(maze[0]);
+  y = 0;
+  while (maze[y] != '\0')
+    y++;
+  loops = (x * y) / 100;
+  while (k != loops)
+    {
+      maze = random_create_loop(maze, x, y);
+      k++;
+    }
+  printf("%d", k);
   return (maze);
 }

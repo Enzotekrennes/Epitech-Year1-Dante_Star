@@ -5,7 +5,7 @@
 ** Login   <alexandre1.lefevre@epitech.eu>
 ** 
 ** Started on  Tue Apr 11 17:42:49 2017 P3N15
-** Last update Fri Apr 14 15:54:32 2017 P3N15
+** Last update Fri Apr 14 16:14:46 2017 P3N15
 */
 
 #include "include/my.h"
@@ -63,12 +63,13 @@ int	new_n(char **maze, int i, int n)
 int	can_it_horiz(char **maze, int dir, int i, int n)
 {
   int	max_x;
-  int	max_y = 0;
+  int	max_y;
 
+  max_y = 0;
   while (maze[max_y] != '\0')
     max_y++;
   max_y--;
-  max_x = strlen(maze[0]) - 1;
+  max_x = my_strlen(maze[0]) - 1;
   if (dir == 2 && i != max_x
       && i != max_x - 1
       && maze[n][i + 2] == 'X')
@@ -86,8 +87,9 @@ int	can_it_horiz(char **maze, int dir, int i, int n)
 int	can_it_verti(char **maze, int dir, int i, int n)
 {
   int	max_x;
-  int	max_y = 0;
+  int	max_y;
 
+  max_y = 0;
   while (maze[max_y] != '\0')
     max_y++;
   max_y--;

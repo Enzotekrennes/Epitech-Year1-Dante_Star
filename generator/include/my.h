@@ -5,7 +5,7 @@
 ** Login   <alexandre@epitech.net>
 **
 ** Started on  Sun Jan  8 16:29:01 2017 Lefevre Alexandre
-** Last update Fri Apr 14 15:53:48 2017 P3N15
+** Last update Fri Apr 14 16:58:14 2017 P3N15
 */
 
 #include <unistd.h>
@@ -44,6 +44,7 @@ char	**maze_up(char **, int, int);
 char	**maze_down(char **, int, int, int);
 char	**maze_left(char **, int, int, int);
 char	**maze_right(char **, int, int);
+char	**random_create_loop(char **, int, int);
 
 /*-----do_stuff.c-----*/
 int	am_i_blocked(int, int);
@@ -57,3 +58,4 @@ char	**road_up(char **, int, int);
 char	**road_down(char **, int, int);
 char	**road_left(char **, int, int);
 char	**road_right(char **, int, int);
+char	**my_add_loop(char **);

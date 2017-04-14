@@ -5,7 +5,7 @@
 ** Login   <alexandre1.lefevre@epitech.eu>
 ** 
 ** Started on  Sun Apr  9 23:39:22 2017 P3N15
-** Last update Fri Apr 14 15:44:16 2017 P3N15
+** Last update Fri Apr 14 16:09:35 2017 P3N15
 */
 
 #include "include/my.h"
@@ -59,7 +59,7 @@ int	my_get_nbr(char *str)
   n = 0;
   while (str[i] != '\0')
     {
-      n = (n * 10) + (str[i] - 48);
+      n = (10 * n) + (str[i] - 48);
       i++;
     }
   return (n);

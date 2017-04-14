@@ -5,7 +5,7 @@
 ** Login   <alexandre1.lefevre@epitech.eu>
 ** 
 ** Started on  Tue Apr 11 16:24:19 2017 P3N15
-** Last update Thu Apr 13 07:19:38 2017 P3N15
+** Last update Fri Apr 14 16:55:38 2017 P3N15
 */
 
 #include "include/my.h"
@@ -57,5 +57,26 @@ char	**maze_right(char **maze, int x, int y)
       (maze[y][x + 2] == 'X') ? maze[y][x + 1] = '*' : 0;
       (maze[y][x + 2] == 'X') ? maze[y][x + 2] = '*' : 0;
     }
+  return (maze);
+}
+
+char	**random_create_loop(char **maze, int x, int y)
+{
+  int	pos_x;
+  int	pos_y;
+
+  pos_x = rand() % (x - 1);
+  pos_y = rand() % (y - 1);
+  if (pos_y % 2 == pos_x % 2)
+    {
+      if (pos_y > 0)
+	pos_y--;
+      else if (pos_x > 0)
+	pos_x--;
+    }
+  if (maze[pos_y][pos_x] == '*')
+    maze = random_create_loop(maze, x, y);
+  else
+    maze[pos_y][pos_x] = '*';
   return (maze);
 }

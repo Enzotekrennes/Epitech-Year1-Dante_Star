@@ -5,7 +5,7 @@
 ## Login   <alexandre@epitech.net>
 ##
 ## Started on  Mon Nov  7 14:33:31 2016 Lefevre Alexandre
-## Last update Thu Apr 13 11:57:58 2017 P3N15
+## Last update Fri Apr 14 16:05:29 2017 P3N15
 ##
 
 SRC	=	main.c	\
@@ -18,12 +18,12 @@ SRC	=	main.c	\
 
 OBJ	=	$(SRC:.c=.o)
 
-CFLAGS	+=	-Wall -Wextra
+CFLAGS	+=	-Wall -Wextra 
 
 NAME	=	generator
 
 all:	$(OBJ)
-	gcc -o $(NAME) $(SRC)
+	gcc -o $(NAME) $(SRC) -g3
 
 clean:
 	rm -f $(OBJ)

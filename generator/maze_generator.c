@@ -1,3 +1,4 @@
+
 /*
 ** maze_generator.c for Dante in /home/p3n15/delivery/Epitech-Year1-Dante_star
 ** 
@@ -5,7 +6,7 @@
 ** Login   <alexandre1.lefevre@epitech.eu>
 ** 
 ** Started on  Mon Apr 10 10:55:00 2017 P3N15
-** Last update Fri Apr 14 15:30:51 2017 P3N15
+** Last update Fri Apr 14 16:59:00 2017 P3N15
 */
 
 #include "include/my.h"
@@ -13,13 +14,21 @@
 int	maze_generator(int x, int y)
 {
   char	**maze;
+  int	i;
 
+  i = 0;
   maze = get_malloc_map(x, y);
   maze = fill_map_x(maze, x);
   maze = make_random_path(maze, x - 1, y - 1);
   maze = my_add_cluster(maze);
-  //  maze = my_add_loop(maze);
+  maze = my_add_loop(maze);
   my_puttab(maze);
+  while(maze[i] != '\0')
+    {
+      free(maze[i]);
+      i++;
+    }
+  free(maze);
   return (0);
 }
 
@@ -71,9 +80,11 @@ int	*get_random_place(int *random, int i, int n)
 
 char	**fill_map_x(char **maze, int k)
 {
-  int	x = 0;
-  int	y = 0;
+  int	x;
+  int	y;
 
+  x = 0;
+  y = 0;
   while (maze[y] != '\0')
     {
       while (x != k)
@@ -93,10 +104,19 @@ char	**get_malloc_map(int x, int y)
   int	i;
 
   i = 0;
-  maze = malloc(sizeof(char *) * y + 1);
+  maze = malloc(sizeof(char *) * (y + 2));
+  maze[y] = '\0';
+  maze[y + 1] = '\0';
   while (i != y)
     {
-      maze[i] = malloc(sizeof(char) * x + 1);
+      maze[i] = malloc(sizeof(char) * (x + 2));
+      i++;
+    }
+  i = 0;
+  while (i != y)
+    {
+      maze[i][x] = '\0';
+      maze[i][x + 1] = '\0';
       i++;
     }
   return (maze);
