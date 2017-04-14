@@ -5,7 +5,7 @@
 ** Login   <alexandre@epitech.net>
 **
 ** Started on  Sun Jan  8 16:29:01 2017 Lefevre Alexandre
-** Last update Fri Apr 14 16:58:14 2017 P3N15
+** Last update Fri Apr 14 19:01:00 2017 P3N15
 */
 
 #include <unistd.h>
@@ -14,16 +14,20 @@
 #include <time.h>
 #include <string.h>
 
-
-/*-----main.c-----*/
-int	main();
-
 /*-----basics.c-----*/
 void	my_putchar(char);
 void	my_putstr(char *);
 void	my_puttab(char **);
 int	my_get_nbr(char *);
 int	my_strlen(char *);
+
+/*-----basics2.c-----*/
+int	my_strsame(char *, char *);
+
+/*-----perfect_maze.c-----*/
+int	perfect_maze_creator(int, int);
+char	**perfect_maze_cleaner(char **, int, int);
+char	**clean_the_remains(char **);
 
 /*-----maze_generator.c-----*/
 int	maze_generator(int, int);

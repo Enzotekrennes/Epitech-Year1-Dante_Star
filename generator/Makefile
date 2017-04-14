@@ -5,16 +5,18 @@
 ## Login   <alexandre@epitech.net>
 ##
 ## Started on  Mon Nov  7 14:33:31 2016 Lefevre Alexandre
-## Last update Fri Apr 14 16:05:29 2017 P3N15
+## Last update Fri Apr 14 18:42:23 2017 P3N15
 ##
 
 SRC	=	main.c	\
 		basics.c	\
+		basics2.c	\
 		maze_generator.c	\
 		imperfection.c	\
 		direction.c	\
 		do_stuff.c	\
-		way_finder.c
+		way_finder.c	\
+		perfect_maze.c
 
 OBJ	=	$(SRC:.c=.o)
 

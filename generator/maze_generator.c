@@ -6,7 +6,7 @@
 ** Login   <alexandre1.lefevre@epitech.eu>
 ** 
 ** Started on  Mon Apr 10 10:55:00 2017 P3N15
-** Last update Fri Apr 14 16:59:00 2017 P3N15
+** Last update Fri Apr 14 18:26:17 2017 P3N15
 */
 
 #include "include/my.h"
@@ -20,6 +20,8 @@ int	maze_generator(int x, int y)
   maze = get_malloc_map(x, y);
   maze = fill_map_x(maze, x);
   maze = make_random_path(maze, x - 1, y - 1);
+  maze[0][0] = '*';
+  maze[y - 1][x - 1] = '*';
   maze = my_add_cluster(maze);
   maze = my_add_loop(maze);
   my_puttab(maze);
@@ -56,9 +58,8 @@ char	**make_random_path(char **maze, int x, int y)
       if (am_i_blocked(i, n) == 1)
 	(1) ? n = new_n(maze, i, n), i = new_i(maze, i, n) : 0;
     }
-  maze[0][0] = '*';
-  maze[y][x] = '*';
-  (maze[y - 1][x] == 'X' && maze[y][x - 1] == 'X') ? maze[y - 1][x] = '*': 0;
+  if (y != 0)
+    (maze[y - 1][x] == 'X' && maze[y][x - 1] == 'X') ? maze[y - 1][x] = '*': 0;
   return (maze);
 }
 
