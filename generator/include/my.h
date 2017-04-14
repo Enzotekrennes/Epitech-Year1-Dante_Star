@@ -5,7 +5,7 @@
 ** Login   <alexandre@epitech.net>
 **
 ** Started on  Sun Jan  8 16:29:01 2017 Lefevre Alexandre
-** Last update Thu Apr 13 12:28:37 2017 P3N15
+** Last update Fri Apr 14 15:53:48 2017 P3N15
 */
 
 #include <unistd.h>
@@ -23,6 +23,7 @@ void	my_putchar(char);
 void	my_putstr(char *);
 void	my_puttab(char **);
 int	my_get_nbr(char *);
+int	my_strlen(char *);
 
 /*-----maze_generator.c-----*/
 int	maze_generator(int, int);
@@ -32,6 +33,7 @@ char	**get_malloc_map(int, int);
 char	**make_random_path(char **, int, int);
 
 /*-----imperfection.c-----*/
+int	check_if_maze_full(char **);
 int	get_x_road(char **, int, int, int);
 int	get_y_road(char **, int, int, int);
 char	**my_add_cluster(char **);

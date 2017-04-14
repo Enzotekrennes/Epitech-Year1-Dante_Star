@@ -5,7 +5,7 @@
 ** Login   <alexandre1.lefevre@epitech.eu>
 ** 
 ** Started on  Sun Apr  9 23:39:22 2017 P3N15
-** Last update Thu Apr 13 07:13:45 2017 P3N15
+** Last update Fri Apr 14 15:44:16 2017 P3N15
 */
 
 #include "include/my.h"
@@ -38,6 +38,16 @@ void	my_puttab(char **tab)
       my_putchar('\n');
       i++;
     }
+}
+
+int	my_strlen(char *str)
+{
+  int	i;
+
+  i = 0;
+  while (str[i] != '\0')
+    i++;
+  return (i);
 }
 
 int	my_get_nbr(char *str)

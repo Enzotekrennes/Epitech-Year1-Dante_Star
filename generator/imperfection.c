@@ -5,7 +5,7 @@
 ** Login   <alexandre1.lefevre@epitech.eu>
 ** 
 ** Started on  Mon Apr 10 16:26:42 2017 P3N15
-** Last update Thu Apr 13 12:40:55 2017 P3N15
+** Last update Fri Apr 14 15:51:08 2017 P3N15
 */
 
 #include "include/my.h"
@@ -19,7 +19,7 @@ char	**my_add_cluster(char **maze)
   i = 0;
   n = 0;
   k = 0;
-  while (k != 10)
+  while (check_if_maze_full(maze) == 1)
     {
       while (maze[n] != '\0')
 	{
@@ -41,10 +41,10 @@ char	**my_add_cluster(char **maze)
 
 char	**my_road_builder(char **maze, int i, int n)
 {
-  int	a;
   int	rd;
   int	x;
   int	y;
+  int	a;
 
   a = 0;
   while (a != 20)
@@ -61,6 +61,27 @@ char	**my_road_builder(char **maze, int i, int n)
       a++;
     }
   return (maze);
+}
+
+int	check_if_maze_full(char **maze)
+{
+  int	i;
+  int	n;
+
+  i = 0;
+  n = 0;
+  while (maze[n] != '\0')
+    {
+      while (maze[n][i] != '\0')
+	{
+	  if (maze[n][i] == 'X')
+	    return (1);
+	  i = i + 2;
+	}
+      i = 0;
+      n = n + 2;
+    }
+  return (0);
 }
 
 int	get_y_road(char **maze, int rd, int i, int n)
