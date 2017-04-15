@@ -5,7 +5,11 @@
 ** Login   <ludovic.porokhov@epitech.net>
 ** 
 ** Started on  Wed Apr 12 14:55:08 2017 Ludovic POROKHOV
+<<<<<<< HEAD
+** Last update Thu Apr 13 20:30:39 2017 Ludovic POROKHOV
+=======
 ** Last update Thu Apr 13 10:49:51 2017 P3N15
+>>>>>>> 62b1443fd154ff94bc1a379637f0d3594c2e5580
 */
 
 #include "include/my.h"
@@ -45,8 +49,12 @@ int	linelen(char *str)
   int	i;
 
   i = 0;
-  while (str[i] != '\n' && str[i] != '\0')
-    i++;
+  while (str[i] != '\n')
+    {
+      if (str[i] == '\0')
+	return (i);
+      i++;
+    }
   return (i);
 }
 
@@ -68,15 +76,24 @@ int	how_many_lines(char *str)
 
 char    *file_reader(char *filename)
 {
+  struct stat	stats;
   char  *file;
   int   fd;
   int   gotten;
-
+  
+  stat(filename, &stats);
+  printf("size: %i |", stats.st_size);
   if ((fd = open(filename, O_RDONLY)) == -1)
     return (NULL);
+<<<<<<< HEAD
+  if ((file = malloc(sizeof(char) * stats.st_size)) == NULL)
+    return (NULL);
+  while ((gotten = read(fd, file, stats.st_size)) > 0)
+=======
   if ((file = malloc(10000)) == NULL)
     return (NULL);
   while ((gotten = read(fd, file, 10000)) > 0)
+>>>>>>> 62b1443fd154ff94bc1a379637f0d3594c2e5580
     file[gotten] = '\0';
   return (file);
 }

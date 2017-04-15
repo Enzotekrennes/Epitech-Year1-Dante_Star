@@ -5,7 +5,7 @@
 ** Login   <ludovic.porokhov@epitech.net>
 ** 
 ** Started on  Wed Apr 12 16:52:23 2017 Ludovic POROKHOV
-** Last update Thu Apr 13 10:04:15 2017 Ludovic POROKHOV
+** Last update Fri Apr 14 13:54:36 2017 Ludovic POROKHOV
 */
 
 #include "include/my.h"
@@ -54,16 +54,16 @@ t_laby	forward(t_laby ia, int xmax, int ymax)
 	ia.y++;
 	return (ia);
       }
-  if (ia.y > 0)
-    if (ia.lab[ia.y - 1][ia.x] == '*')
-      {
-	ia.y--;
-	return (ia);
-      }
   if (ia.x < xmax - 1)
     if (ia.lab[ia.y][ia.x + 1] == '*')
       {
 	ia.x++;
+	return (ia);
+      }
+  if (ia.y > 0)
+    if (ia.lab[ia.y - 1][ia.x] == '*')
+      {
+	ia.y--;
 	return (ia);
       }
   if (ia.x > 0)
