@@ -1,11 +1,11 @@
 # Epitech-Year1-Dante_Star
 
-This project is about making a maze generator, and 3 different maze solver with different algorithm to solve maze.
+This project is about making a maze generator, and 3 different maze solver with different algorithms to solve mazes.
 The 4 parts of this Project are the following:
 - A maze generator for perfect and imperfect maze
 - A maze solver using a Depth-First search algorithm
 - A maze solver using a Breadth-First search algorithm
-- A maze solver using a A* algorithm
+- A maze solver using a A* search algorithm
 
 But we must follow some rules for those maze, which are:
 - The maze starts at the top left and his exit is at the bottom right of it.
