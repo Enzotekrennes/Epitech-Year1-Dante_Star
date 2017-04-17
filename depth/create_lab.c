@@ -5,11 +5,7 @@
 ** Login   <ludovic.porokhov@epitech.net>
 ** 
 ** Started on  Wed Apr 12 14:55:08 2017 Ludovic POROKHOV
-<<<<<<< HEAD
-** Last update Mon Apr 17 16:48:41 2017 Ludovic POROKHOV
-=======
-** Last update Thu Apr 13 10:49:51 2017 P3N15
->>>>>>> 62b1443fd154ff94bc1a379637f0d3594c2e5580
+** Last update Mon Apr 17 17:27:02 2017 P3N15
 */
 
 #include "include/my.h"
