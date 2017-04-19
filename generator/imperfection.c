@@ -5,7 +5,7 @@
 ** Login   <alexandre1.lefevre@epitech.eu>
 ** 
 ** Started on  Mon Apr 10 16:26:42 2017 P3N15
-** Last update Fri Apr 14 16:31:13 2017 P3N15
+** Last update Wed Apr 19 16:40:47 2017 P3N15
 */
 
 #include "include/my.h"
@@ -28,6 +28,8 @@ char	**my_add_cluster(char **maze)
 	      if (maze[n][i] == '*')
 		maze = my_road_builder(maze, i, n);
 	      i = i + 2;
+	      //	      clrscr();
+	      //my_putlab(maze);
 	    }
 	  n = n + 2;
 	  i = 0;

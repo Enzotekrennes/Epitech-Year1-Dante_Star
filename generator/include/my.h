@@ -5,7 +5,7 @@
 ** Login   <alexandre@epitech.net>
 **
 ** Started on  Sun Jan  8 16:29:01 2017 Lefevre Alexandre
-** Last update Fri Apr 14 19:01:00 2017 P3N15
+** Last update Wed Apr 19 14:17:16 2017 P3N15
 */
 
 #include <unistd.h>
@@ -22,6 +22,8 @@ int	my_get_nbr(char *);
 int	my_strlen(char *);
 
 /*-----basics2.c-----*/
+void	clrscr();
+void	my_putlab(char **);
 int	my_strsame(char *, char *);
 
 /*-----perfect_maze.c-----*/
