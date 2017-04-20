@@ -59,3 +59,7 @@ Well this is pretty much how a Breadth-First search algorithm works:
 # The A* Solver
 
 To explain more in details next time
+
+# Bonus
+
+Our Maze generator currently also have an option to show the maze but with color on the terminal, same for the depth search one.
