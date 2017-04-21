@@ -5,7 +5,7 @@
 ** Login   <alexandre@epitech.net>
 **
 ** Started on  Sun Jan  8 16:29:01 2017 Lefevre Alexandre
-** Last update Wed Apr 19 14:17:16 2017 P3N15
+** Last update Fri Apr 21 15:51:33 2017 P3N15
 */
 
 #include <unistd.h>
@@ -25,6 +25,8 @@ int	my_strlen(char *);
 void	clrscr();
 void	my_putlab(char **);
 int	my_strsame(char *, char *);
+char	**maze_odd_x(char **, int);
+char	**maze_odd_y(char **, int);
 
 /*-----perfect_maze.c-----*/
 int	perfect_maze_creator(int, int);

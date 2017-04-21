@@ -5,7 +5,7 @@
 ** Login   <alexandre1.lefevre@epitech.eu>
 ** 
 ** Started on  Thu Apr 13 11:29:08 2017 P3N15
-** Last update Wed Apr 19 16:42:48 2017 P3N15
+** Last update Fri Apr 21 19:49:50 2017 P3N15
 */
 
 #include "include/my.h"
@@ -75,8 +75,8 @@ char	**my_add_loop(char **maze)
     {
       maze = random_create_loop(maze, x, y);
       k++;
-      //      clrscr();
-      //my_putlab(maze);
+      clrscr();
+      my_putlab(maze);
     }
   return (maze);
 }

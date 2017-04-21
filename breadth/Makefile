@@ -5,7 +5,7 @@
 ## Login   <alexandre@epitech.net>
 ##
 ## Started on  Mon Nov  7 14:33:31 2016 Lefevre Alexandre
-## Last update Sat Apr 15 17:41:49 2017 P3N15
+## Last update Wed Apr 19 16:59:41 2017 P3N15
 ##
 
 SRC	=	main.c	\
@@ -20,7 +20,7 @@ CFLAGS	+=	-Wall -Wextra
 NAME	=	solver
 
 all:	$(OBJ)
-	gcc -o $(NAME) $(SRC) -g3
+	gcc -o $(NAME) $(SRC) -g3 -lpthread
 
 clean:
 	rm -f $(OBJ)

@@ -5,7 +5,7 @@
 ** Login   <alexandre1.lefevre@epitech.eu>
 ** 
 ** Started on  Sat Apr 15 17:19:16 2017 P3N15
-** Last update Mon Apr 17 10:47:14 2017 P3N15
+** Last update Wed Apr 19 17:04:01 2017 P3N15
 */
 
 #include "include/my.h"
@@ -80,11 +80,15 @@ int	get_maze_y(char **maze)
   return (y - 1);
 }
 
-int	mutiple_path(char **maze, int i, int n)
+int	multiple_path(char **maze, int i, int n)
 {
   int	k;
+  int	x;
+  int	y;
 
   k = 0;
+  x = get_maze_x(maze);
+  y = get_maze_y(maze);
   if (i != 0 && maze[n][i - 1] == '*')
     k++;
   if (i != x && maze[n][i + 1] == '*')

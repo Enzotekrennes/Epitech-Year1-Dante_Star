@@ -6,7 +6,7 @@
 ** Login   <alexandre1.lefevre@epitech.eu>
 ** 
 ** Started on  Mon Apr 10 10:55:00 2017 P3N15
-** Last update Wed Apr 19 16:47:28 2017 P3N15
+** Last update Fri Apr 21 19:50:40 2017 P3N15
 */
 
 #include "include/my.h"
@@ -24,6 +24,8 @@ int	maze_generator(int x, int y)
   maze[y - 1][x - 1] = '*';
   maze = my_add_cluster(maze);
   (x > 2 && y > 2) ? maze = my_add_loop(maze) : 0;
+  ((x % 2) == 0) ? maze = maze_odd_x(maze, x - 1) : 0;
+  ((y % 2) == 0) ? maze = maze_odd_y(maze, y - 1) : 0;
   my_putlab(maze);
   while(maze[i] != '\0')
     {
@@ -57,8 +59,8 @@ char	**make_random_path(char **maze, int x, int y)
       n = verti;
       if (am_i_blocked(i, n) == 1)
 	(1) ? n = new_n(maze, i, n), i = new_i(maze, i, n) : 0;
-      //      clrscr();
-      //my_putlab(maze);
+      clrscr();
+      my_putlab(maze);
     }
   if (y != 0)
     (maze[y - 1][x] == 'X' && maze[y][x - 1] == 'X') ? maze[y - 1][x] = '*': 0;
