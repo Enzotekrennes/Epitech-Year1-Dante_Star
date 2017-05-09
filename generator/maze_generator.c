@@ -1,4 +1,3 @@
-
 /*
 ** maze_generator.c for Dante in /home/p3n15/delivery/Epitech-Year1-Dante_star
 ** 
@@ -6,7 +5,7 @@
 ** Login   <alexandre1.lefevre@epitech.eu>
 ** 
 ** Started on  Mon Apr 10 10:55:00 2017 P3N15
-** Last update Fri Apr 21 19:50:40 2017 P3N15
+** Last update Tue May  9 15:32:12 2017 P3N15
 */
 
 #include "include/my.h"
@@ -57,10 +56,10 @@ char	**make_random_path(char **maze, int x, int y)
       (dir == 3 && i != 0) ? maze = maze_left(maze, i, n, y) : 0;
       i = horiz;
       n = verti;
-      if (am_i_blocked(i, n) == 1)
-	(1) ? n = new_n(maze, i, n), i = new_i(maze, i, n) : 0;
       clrscr();
       my_putlab(maze);
+      if (am_i_blocked(i, n) == 1)
+	(1) ? n = new_n(maze, i, n), i = new_i(maze, i, n) : 0;
     }
   if (y != 0)
     (maze[y - 1][x] == 'X' && maze[y][x - 1] == 'X') ? maze[y - 1][x] = '*': 0;
