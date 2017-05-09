@@ -5,13 +5,14 @@
 ## Login   <ludovic.porokhov@epitech.net>
 ## 
 ## Started on  Tue Apr 11 16:07:10 2017 Ludovic POROKHOV
-## Last update Wed Apr 12 16:52:16 2017 Ludovic POROKHOV
+## Last update Tue May  9 14:12:03 2017 Ludovic POROKHOV
 ##
 
 SRC	=	s_main.c \
 		basic.c \
 		create_lab.c \
-		solver.c
+		solver.c \
+		checker.c
 
 OBJ	=	$(SRC:.c=.o)
 

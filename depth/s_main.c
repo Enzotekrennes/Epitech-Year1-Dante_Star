@@ -6,7 +6,7 @@
 ** 
 ** Started on  Tue Apr 11 16:13:59 2017 Ludovic POROKHOV
 <<<<<<< HEAD
-** Last update Mon Apr 17 17:09:34 2017 Ludovic POROKHOV
+** Last update Tue May  9 14:26:25 2017 Ludovic POROKHOV
 =======
 ** Last update Thu Apr 13 10:50:21 2017 P3N15
 >>>>>>> 62b1443fd154ff94bc1a379637f0d3594c2e5580
@@ -45,6 +45,8 @@ char	**solving(t_laby ia, int xmax, int ymax)
 	ia = forward(ia, xmax, ymax);
       else if (check == 84)
 	ia = backward(ia, xmax, ymax);
+      //else if (check == 42)
+      //ia = (ia, xmax, ymax);
       else
 	return (NULL);
       my_putlab(ia.lab);
