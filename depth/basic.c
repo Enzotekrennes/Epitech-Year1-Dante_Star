@@ -5,7 +5,7 @@
 ** Login   <ludovic.porokhov@epitech.net>
 ** 
 ** Started on  Tue Apr 11 16:13:49 2017 Ludovic POROKHOV
-** Last update Mon Apr 17 17:03:42 2017 Ludovic POROKHOV
+** Last update Tue May  9 14:38:19 2017 Ludovic POROKHOV
 */
 
 #include "include/my.h"
@@ -33,19 +33,21 @@ void	my_putlab(char **tab)
   int	j;
 
   i = 0;
+  system("@cls||clear");
+  usleep(30000);
   while (tab[i])
     {
       j = 0;
       while (tab[i][j])
 	{
 	  if (tab[i][j] == 'D')
-	    printf("\x1B[33m█\x1B[0m");
+	    printf("\x1B[31m█\x1B[0m");
 	  else if (tab[i][j] == 'o')
-	    printf("\x1B[35m█\x1B[0m");
-	  else if (tab[i][j] == '*')
 	    printf("\x1B[32m█\x1B[0m");
-	  else if (tab[i][j] == 'X')
+	  else if (tab[i][j] == '*')
 	    printf("\x1B[34m█\x1B[0m");
+	  else if (tab[i][j] == 'X')
+	    printf("\x1B[37m█\x1B[0m");
 	  j++;
 	}
       printf("\n");

@@ -5,7 +5,11 @@
 ** Login   <alexandre1.lefevre@epitech.eu>
 ** 
 ** Started on  Mon Apr 10 10:55:00 2017 P3N15
+<<<<<<< HEAD
 ** Last update Tue May  9 15:32:12 2017 P3N15
+=======
+** Last update Tue May  2 15:54:52 2017 Ludovic POROKHOV
+>>>>>>> 13d85092042d6893032410ee06ab1b61bde4062c
 */
 
 #include "include/my.h"
@@ -26,6 +30,7 @@ int	maze_generator(int x, int y)
   ((x % 2) == 0) ? maze = maze_odd_x(maze, x - 1) : 0;
   ((y % 2) == 0) ? maze = maze_odd_y(maze, y - 1) : 0;
   my_putlab(maze);
+  printf("\n");
   while(maze[i] != '\0')
     {
       free(maze[i]);

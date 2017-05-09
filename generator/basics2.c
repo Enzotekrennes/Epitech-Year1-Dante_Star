@@ -5,7 +5,7 @@
 ** Login   <alexandre1.lefevre@epitech.eu>
 ** 
 ** Started on  Fri Apr 14 18:22:34 2017 P3N15
-** Last update Fri Apr 21 15:51:01 2017 P3N15
+** Last update Thu Apr 27 16:15:49 2017 P3N15
 */
 
 #include "include/my.h"
@@ -83,5 +83,5 @@ void    my_putlab(char **tab)
 
 void	clrscr()
 {
-  system("@cls||clear");
+  system("clear");
 }

@@ -5,7 +5,7 @@
 ** Login   <alexandre1.lefevre@epitech.eu>
 ** 
 ** Started on  Sat Apr 15 16:59:52 2017 P3N15
-** Last update Sat Apr 15 17:39:33 2017 P3N15
+** Last update Sat Apr 29 14:55:52 2017 P3N15
 */
 
 #include "include/my.h"
@@ -34,6 +34,5 @@ int	main(int ac, char **av)
   x = get_maze_x(maze);
   y = get_maze_y(maze);
   maze_breadth_solver(maze, x, y);
-  my_puttab(maze);
   return (0);
 }
