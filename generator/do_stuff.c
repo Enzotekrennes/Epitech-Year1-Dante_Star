@@ -5,7 +5,7 @@
 ** Login   <alexandre1.lefevre@epitech.eu>
 ** 
 ** Started on  Tue Apr 11 17:42:49 2017 P3N15
-** Last update Fri Apr 14 16:14:46 2017 P3N15
+** Last update Fri May 12 19:18:03 2017 P3N15
 */
 
 #include "include/my.h"
@@ -93,7 +93,7 @@ int	can_it_verti(char **maze, int dir, int i, int n)
   while (maze[max_y] != '\0')
     max_y++;
   max_y--;
-  max_x = strlen(maze[0]) - 1;
+  max_x = my_strlen(maze[0]) - 1;
   if (dir == 1 && n != 0)
     {
       if (i == 0 || i == 1 || i == max_x || i == max_x - 1)

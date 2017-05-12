@@ -5,7 +5,7 @@
 ** Login   <alexandre1.lefevre@epitech.eu>
 ** 
 ** Started on  Fri Apr 14 18:39:14 2017 P3N15
-** Last update Thu May 11 16:02:09 2017 P3N15
+** Last update Fri May 12 19:23:44 2017 P3N15
 */
 
 #include "include/my.h"
@@ -50,8 +50,6 @@ char	**perfect_maze_cleaner(char **maze, int x, int y)
 	i--;
       else if (n > 0 && maze[n - 1][i] == '*')
 	n--;
-      //      clrscr();
-      //my_putlab(maze);
     }
   maze[n][i] = 'o';
   maze = clean_the_remains(maze);

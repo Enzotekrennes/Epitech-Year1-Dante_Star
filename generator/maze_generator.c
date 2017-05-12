@@ -5,7 +5,7 @@
 ** Login   <alexandre1.lefevre@epitech.eu>
 ** 
 ** Started on  Mon Apr 10 10:55:00 2017 P3N15
-** Last update Fri May 12 18:39:31 2017 P3N15
+** Last update Fri May 12 19:15:33 2017 P3N15
 */
 
 #include "include/my.h"
@@ -15,6 +15,7 @@ int	maze_generator(int x, int y)
   char	**maze;
   int	i;
 
+  srand(time(NULL));
   i = 0;
   maze = get_malloc_map(x, y);
   maze = fill_map_x(maze, x);
@@ -22,7 +23,6 @@ int	maze_generator(int x, int y)
   maze[0][0] = '*';
   maze[y - 1][x - 1] = '*';
   maze = my_add_cluster(maze);
-  (x > 2 && y > 2) ? maze = my_add_loop(maze) : 0;
   ((x % 2) == 0) ? maze = maze_odd_x(maze, x - 1) : 0;
   ((y % 2) == 0) ? maze = maze_odd_y(maze, y - 1) : 0;
   my_puttab(maze);
@@ -38,13 +38,14 @@ int	maze_generator(int x, int y)
 
 char	**make_random_path(char **maze, int x, int y)
 {
-  int	i = 0;
-  int	n = 0;
+  int	i;
+  int	n;
   int	horiz;
   int	verti;
   int	dir;
 
-  srand(time(NULL));
+  n = 0;
+  i = 0;
   while ((i != x && i != x - 1) || ( n != y && n != y - 1))
     {
       dir = rand() % 4;
@@ -56,8 +57,6 @@ char	**make_random_path(char **maze, int x, int y)
       (dir == 3 && i != 0) ? maze = maze_left(maze, i, n, y) : 0;
       i = horiz;
       n = verti;
-      //  clrscr();
-      //my_putlab(maze);
       if (am_i_blocked(i, n) == 1)
 	(1) ? n = new_n(maze, i, n), i = new_i(maze, i, n) : 0;
     }
@@ -69,8 +68,9 @@ char	**make_random_path(char **maze, int x, int y)
 int	*get_random_place(int *random, int i, int n)
 {
   int	randomness;
-  int	k = 0;
+  int	k;
 
+  k = 0;
   randomness = rand() % 5;
   while (random[k] != '\0')
     k++;
@@ -108,21 +108,14 @@ char	**get_malloc_map(int x, int y)
   int	i;
 
   i = 0;
-  if ((maze = malloc(sizeof(char *) * (y + 2))) == NULL)
+  if ((maze = malloc(sizeof(char *) * (y + 1))) == NULL)
     exit(84);
   maze[y] = '\0';
-  maze[y + 1] = '\0';
   while (i != y)
     {
-      if ((maze[i] = malloc(sizeof(char) * (x + 2))) == NULL)
+      if ((maze[i] = malloc(sizeof(char) * (x + 1))) == NULL)
 	exit(84);
-      i++;
-    }
-  i = 0;
-  while (i != y)
-    {
       maze[i][x] = '\0';
-      maze[i][x + 1] = '\0';
       i++;
     }
   return (maze);
