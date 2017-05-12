@@ -5,7 +5,7 @@
 ** Login   <alexandre1.lefevre@epitech.eu>
 ** 
 ** Started on  Sat Apr 15 17:36:38 2017 P3N15
-** Last update Fri May 12 14:19:50 2017 P3N15
+** Last update Fri May 12 19:53:38 2017 P3N15
 */
 
 #include "include/my.h"
@@ -21,7 +21,7 @@ int	maze_breadth_solver(char **maze, int **solv, int x, int y)
       k++;
     }
   maze = get_solved_maze(maze, solv, x, y);
-  my_putlab(maze);
+  my_puttab(maze);
   k = 0;
   while (solv[k] != '\0')
     {

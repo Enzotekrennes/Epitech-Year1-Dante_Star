@@ -5,7 +5,7 @@
 ## Login   <ludovic.porokhov@epitech.net>
 ## 
 ## Started on  Tue Apr 11 16:07:10 2017 Ludovic POROKHOV
-## Last update Tue May  9 14:12:03 2017 Ludovic POROKHOV
+## Last update Fri May 12 18:55:01 2017 P3N15
 ##
 
 SRC	=	s_main.c \
@@ -21,7 +21,7 @@ NAME	=	solver
 all:	$(NAME)
 
 $(NAME):	$(OBJ)
-		gcc $(OBJ) -o $(NAME)
+		gcc $(OBJ) -o $(NAME) -g3
 
 clean:
 	rm -f $(OBJ)

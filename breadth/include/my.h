@@ -5,7 +5,7 @@
 ** Login   <alexandre1.lefevre@epitech.eu>
 ** 
 ** Started on  Sat Apr 15 16:57:11 2017 P3N15
-** Last update Thu May 11 20:03:58 2017 P3N15
+** Last update Fri May 12 19:57:46 2017 P3N15
 */
 
 #include <unistd.h>
@@ -19,7 +19,6 @@
 
 /* main.c */
 int	main(int, char **);
-void	my_putlab(char **);
 
 /* basics.c */
 void    my_putchar(char);
@@ -42,6 +41,7 @@ int	**next_turn(int **, int);
 int	**follow_path(int **, int, int, int);
 
 /* maze_secret_plan_creator.c */
+int	maze_check_validity(char **);
 int	**int_tab_creator(char **, int, int);
 int	**fill_int_tab(int **, char **);
 int	**malloc_int_tab(int, int);

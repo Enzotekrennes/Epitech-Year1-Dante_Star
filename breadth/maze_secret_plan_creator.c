@@ -5,7 +5,7 @@
 ** Login   <alexandre1.lefevre@epitech.eu>
 ** 
 ** Started on  Thu May 11 18:15:59 2017 P3N15
-** Last update Fri May 12 18:16:16 2017 P3N15
+** Last update Fri May 12 20:03:59 2017 P3N15
 */
 
 #include "include/my.h"
@@ -61,4 +61,33 @@ int     **malloc_int_tab(int x, int y)
       i++;
     }
   return (solv);
+}
+
+int	maze_check_validity(char **maze)
+{
+  int	x;
+  int	i;
+  int	n;
+
+  x = 0;
+  i = 0;
+  n = 0;
+  while (maze[0][x] != '\0')
+    x++;
+  while (maze[n] != '\0')
+    {
+      while (maze[n][i] != '\0')
+	{
+	  if (maze[n][i] != '*' && maze[n][i] != 'X')
+	    return (84);
+	  i++;
+	}
+      if (i != x)
+	return (84);
+      n++;
+      i = 0;
+    }
+  if (maze[0][0] == 'X' || maze[n - 1][x - 1] == 'X')
+    return (84);
+  return (0);
 }

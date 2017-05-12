@@ -5,7 +5,7 @@
 ## Login   <alexandre@epitech.net>
 ##
 ## Started on  Mon Nov  7 14:33:31 2016 Lefevre Alexandre
-## Last update Thu May 11 20:03:17 2017 P3N15
+## Last update Fri May 12 20:06:35 2017 P3N15
 ##
 
 SRC	=	main.c	\
@@ -16,12 +16,10 @@ SRC	=	main.c	\
 
 OBJ	=	$(SRC:.c=.o)
 
-CFLAGS	+=	-Wall -Wextra 
-
 NAME	=	solver
 
 all:	$(OBJ)
-	gcc -o $(NAME) $(SRC) -g3
+	gcc -o $(NAME) $(SRC)
 
 clean:
 	rm -f $(OBJ)
