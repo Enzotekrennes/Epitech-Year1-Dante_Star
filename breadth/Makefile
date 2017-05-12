@@ -5,13 +5,14 @@
 ## Login   <alexandre@epitech.net>
 ##
 ## Started on  Mon Nov  7 14:33:31 2016 Lefevre Alexandre
-## Last update Wed Apr 19 16:59:41 2017 P3N15
+## Last update Thu May 11 20:03:17 2017 P3N15
 ##
 
 SRC	=	main.c	\
 		basics.c	\
 		maze_creator.c	\
-		maze_breadth.c
+		maze_breadth.c	\
+		maze_secret_plan_creator.c
 
 OBJ	=	$(SRC:.c=.o)
 
@@ -20,7 +21,7 @@ CFLAGS	+=	-Wall -Wextra
 NAME	=	solver
 
 all:	$(OBJ)
-	gcc -o $(NAME) $(SRC) -g3 -lpthread
+	gcc -o $(NAME) $(SRC) -g3
 
 clean:
 	rm -f $(OBJ)

@@ -5,7 +5,7 @@
 ** Login   <alexandre1.lefevre@epitech.eu>
 ** 
 ** Started on  Sat Apr 15 17:19:16 2017 P3N15
-** Last update Wed Apr 19 17:04:01 2017 P3N15
+** Last update Fri May 12 18:33:51 2017 P3N15
 */
 
 #include "include/my.h"
@@ -26,11 +26,14 @@ char	**malloc_maze(char *file)
 	n++;
       i++;
     }
-  i = i / n;
-  maze = malloc(sizeof(char *) * (n + 2));
+  if ((maze = malloc(sizeof(char *) * (n + 1))) == NULL)
+    exit(84);
+  maze[n] = NULL;
   while (k != n)
     {
-      maze[k] = malloc(sizeof(char) * (i + 2));
+      if ((maze[k] = malloc(sizeof(char) * ((i / n) + 1))) == NULL)
+	exit(84);
+      maze[k][i / n] = '\0';
       k++;
     }
   return (maze);
@@ -97,7 +100,9 @@ int	multiple_path(char **maze, int i, int n)
     k++;
   if (n != y && maze[n + 1][i] == '*')
     k++;
-  if (k >= 2)
-    return (1);
-  return (0);
+  if (k == 2)
+    return (2);
+  else if (k == 3)
+    return (3);
+  return (1);
 }

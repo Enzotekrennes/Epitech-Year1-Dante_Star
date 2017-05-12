@@ -5,7 +5,7 @@
 ** Login   <alexandre1.lefevre@epitech.eu>
 ** 
 ** Started on  Fri Apr 14 18:39:14 2017 P3N15
-** Last update Fri May  5 14:55:44 2017 P3N15
+** Last update Thu May 11 16:02:09 2017 P3N15
 */
 
 #include "include/my.h"
@@ -22,7 +22,7 @@ int	perfect_maze_creator(int x, int y)
   maze[0][0] = '*';
   maze[y - 1][x - 1] = '*';
   maze = perfect_maze_cleaner(maze, x - 1, y - 1);
-  my_putlab(maze);
+  my_puttab(maze);
   while (maze[i] != '\0')
     {
       free(maze[i]);
@@ -50,8 +50,8 @@ char	**perfect_maze_cleaner(char **maze, int x, int y)
 	i--;
       else if (n > 0 && maze[n - 1][i] == '*')
 	n--;
-      clrscr();
-      my_putlab(maze);
+      //      clrscr();
+      //my_putlab(maze);
     }
   maze[n][i] = 'o';
   maze = clean_the_remains(maze);

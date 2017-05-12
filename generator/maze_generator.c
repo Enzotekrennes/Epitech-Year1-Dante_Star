@@ -5,11 +5,7 @@
 ** Login   <alexandre1.lefevre@epitech.eu>
 ** 
 ** Started on  Mon Apr 10 10:55:00 2017 P3N15
-<<<<<<< HEAD
-** Last update Tue May  9 15:32:12 2017 P3N15
-=======
-** Last update Tue May  2 15:54:52 2017 Ludovic POROKHOV
->>>>>>> 13d85092042d6893032410ee06ab1b61bde4062c
+** Last update Fri May 12 18:39:31 2017 P3N15
 */
 
 #include "include/my.h"
@@ -29,8 +25,7 @@ int	maze_generator(int x, int y)
   (x > 2 && y > 2) ? maze = my_add_loop(maze) : 0;
   ((x % 2) == 0) ? maze = maze_odd_x(maze, x - 1) : 0;
   ((y % 2) == 0) ? maze = maze_odd_y(maze, y - 1) : 0;
-  my_putlab(maze);
-  printf("\n");
+  my_puttab(maze);
   while(maze[i] != '\0')
     {
       free(maze[i]);
@@ -61,8 +56,8 @@ char	**make_random_path(char **maze, int x, int y)
       (dir == 3 && i != 0) ? maze = maze_left(maze, i, n, y) : 0;
       i = horiz;
       n = verti;
-      clrscr();
-      my_putlab(maze);
+      //  clrscr();
+      //my_putlab(maze);
       if (am_i_blocked(i, n) == 1)
 	(1) ? n = new_n(maze, i, n), i = new_i(maze, i, n) : 0;
     }
@@ -113,12 +108,14 @@ char	**get_malloc_map(int x, int y)
   int	i;
 
   i = 0;
-  maze = malloc(sizeof(char *) * (y + 2));
+  if ((maze = malloc(sizeof(char *) * (y + 2))) == NULL)
+    exit(84);
   maze[y] = '\0';
   maze[y + 1] = '\0';
   while (i != y)
     {
-      maze[i] = malloc(sizeof(char) * (x + 2));
+      if ((maze[i] = malloc(sizeof(char) * (x + 2))) == NULL)
+	exit(84);
       i++;
     }
   i = 0;
